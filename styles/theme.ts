@@ -15,6 +15,7 @@ export const theme: DefaultTheme = {
     common: {
       white: "#fff",
       black: "#000",
+      gray: "#808080",
     },
   },
   background: {

@@ -18,6 +18,7 @@ declare module "styled-components/native" {
       common: {
         white: string;
         black: string;
+        gray: string;
       };
     };
     background: {
