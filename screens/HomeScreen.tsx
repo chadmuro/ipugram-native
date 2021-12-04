@@ -5,14 +5,17 @@ import styled from "styled-components/native";
 import Header from "../components/Home/Header";
 import Stories from "../components/Home/Stories";
 import Post from "../components/Home/Post";
+import BottomTabs from "../components/Home/BottomTabs";
+import { PostType } from "../constants/types/PostType";
 
 const Container = styled.SafeAreaView`
   background-color: ${({ theme }) => theme.background.dark};
   flex: 1;
 `;
 
-const POSTS = [
+const POSTS: PostType[] = [
   {
+    id: "1",
     imageUrl: faker.random.image(),
     user: faker.internet.userName(),
     likes: faker.random.number(1000),
@@ -20,12 +23,14 @@ const POSTS = [
     profile_picture: faker.random.image(),
     comments: [
       {
+        id: "1",
         user: faker.internet.userName(),
         comment: faker.lorem.sentence(),
       },
     ],
   },
   {
+    id: "2",
     imageUrl: faker.random.image(),
     user: faker.internet.userName(),
     likes: faker.random.number(),
@@ -33,16 +38,19 @@ const POSTS = [
     profile_picture: faker.random.image(),
     comments: [
       {
+        id: "1",
         user: faker.internet.userName(),
         comment: faker.lorem.sentence(),
       },
       {
+        id: "2",
         user: faker.internet.userName(),
         comment: faker.lorem.sentence(),
       },
     ],
   },
   {
+    id: "3",
     imageUrl: faker.random.image(),
     user: faker.internet.userName(),
     likes: faker.random.number(1000),
@@ -62,6 +70,7 @@ export default function HomeScreen() {
           <Post post={post} key={index} />
         ))}
       </ScrollView>
+      <BottomTabs />
     </Container>
   );
 }

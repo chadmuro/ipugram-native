@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import { TouchableOpacity, Text } from "react-native";
 import { Divider } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
+import { PostType } from "../../constants/types/PostType";
 
 const Container = styled.View`
   margin-bottom: 30px;
@@ -14,7 +15,7 @@ const PostFooterWrap = styled.View`
 `;
 
 interface PostProps {
-  post: any;
+  post: PostType;
 }
 
 const Post = ({ post }: PostProps) => {
@@ -47,7 +48,7 @@ const PostHeaderImage = styled.Image`
   height: 35px;
   border-radius: 50px;
   border-width: 1px;
-  border-color: #ff8501;
+  border-color: ${({ theme }) => theme.colors.primary.main};
 `;
 
 const PostHeaderText = styled.Text`

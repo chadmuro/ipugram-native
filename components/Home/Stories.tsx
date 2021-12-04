@@ -1,7 +1,7 @@
 import React from "react";
 import faker from "faker";
 import styled from "styled-components/native";
-import { Text, ScrollView } from "react-native";
+import { ScrollView } from "react-native";
 
 const Container = styled.View`
   margin-bottom: 13px;
@@ -17,7 +17,7 @@ const StoryImage = styled.Image`
   height: 70px;
   border-radius: 50px;
   border-width: 3px;
-  border-color: #ff8501;
+  border-color: ${({ theme }) => theme.colors.primary.main};
 `;
 
 const StoryText = styled.Text`
