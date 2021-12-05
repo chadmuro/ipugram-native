@@ -6,7 +6,9 @@ type IoniconType =
   | "play-circle-outline"
   | "play-circle-sharp"
   | "cart-outline"
-  | "cart";
+  | "cart"
+  | "person-circle-outline"
+  | "person-circle";
 
 export const bottomTabIcons: {
   name: string;
@@ -32,5 +34,10 @@ export const bottomTabIcons: {
     name: "shop",
     inactiveIcon: "cart-outline",
     activeIcon: "cart",
+  },
+  {
+    name: "profile",
+    inactiveIcon: "person-circle-outline",
+    activeIcon: "person-circle",
   },
 ];

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components/native";
-import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { StackParamList } from "../../screens/Navigation";
@@ -39,9 +38,12 @@ const UnreadBadgeText = styled.Text`
   font-weight: 600;
 `;
 
-const Title = styled.Text`
-  color: ${({ theme }) => theme.colors.common.white};
-  font-size: 18px;
+const TitleWrap = styled.TouchableOpacity``;
+
+const Title = styled.Image`
+  height: 30px;
+  width: 100px;
+  resize-mode: contain;
 `;
 
 const Header = ({
@@ -51,9 +53,9 @@ const Header = ({
 }) => {
   return (
     <Container>
-      <TouchableOpacity>
-        <Title>Ipugram</Title>
-      </TouchableOpacity>
+      <TitleWrap>
+        <Title source={require("../../assets/IpugramText.png")} />
+      </TitleWrap>
       <IconsContainer>
         <IconWrap onPress={() => navigation.push("NewPostScreen")}>
           <Ionicons

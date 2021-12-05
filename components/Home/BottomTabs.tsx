@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import faker from "faker";
 import styled from "styled-components/native";
-import { Divider, IconProps } from "react-native-elements";
+import { Divider } from "react-native-elements";
 import { Ionicons } from "@expo/vector-icons";
 import { bottomTabIcons } from "../../constants/bottomTabIcons";
 
@@ -21,18 +20,6 @@ const BottomTabsContainer = styled.View`
 `;
 
 const BottomIconWrap = styled.TouchableOpacity``;
-
-type ProfileImageProps = {
-  active: boolean;
-};
-
-const ProfileImage = styled.Image<ProfileImageProps>`
-  width: 30px;
-  height: 30px;
-  border-radius: 50px;
-  border-color: ${({ theme }) => theme.colors.common.white};
-  border-width: ${({ active }) => (active ? "2px" : "0px")};
-`;
 
 const BottomTabs = () => {
   const [activeTab, setActiveTab] = useState("home");
@@ -57,12 +44,6 @@ const BottomTabs = () => {
             />
           </BottomIconWrap>
         ))}
-        <BottomIconWrap onPress={() => setActiveTab("profile")}>
-          <ProfileImage
-            source={{ uri: faker.random.image() }}
-            active={activeTab === "profile"}
-          />
-        </BottomIconWrap>
       </BottomTabsContainer>
     </BottomTabsWrapper>
   );
