@@ -6,7 +6,7 @@ import { Formik } from "formik";
 import styled from "styled-components/native";
 import { Ionicons } from "@expo/vector-icons";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { StackParamList } from "../../screens/Navigation";
+import { StackParamList } from "../../Navigation";
 
 const uploadPostSchema = Yup.object().shape({
   caption: Yup.string().max(

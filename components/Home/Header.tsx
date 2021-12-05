@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/native";
 import { Ionicons } from "@expo/vector-icons";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { StackParamList } from "../../screens/Navigation";
+import { StackParamList } from "../../Navigation";
 
 const Container = styled.View`
   justify-content: space-between;

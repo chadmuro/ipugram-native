@@ -1,7 +1,7 @@
 import React from "react";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import styled from "styled-components/native";
-import LoginForm from "../components/Login/LoginForm";
+import SignupForm from "../components/Signup/SignupForm";
 import { StackParamList } from "../Navigation";
 
 const Container = styled.View`
@@ -26,7 +26,7 @@ const LoginScreen = ({
 }: {
   navigation: NativeStackNavigationProp<
     StackParamList,
-    "LoginScreen"
+    "SignupScreen"
   >;
 }) => {
   return (
@@ -34,7 +34,7 @@ const LoginScreen = ({
       <LogoWrap>
         <Logo source={require("../assets/IpugramLogo.png")} />
       </LogoWrap>
-      <LoginForm navigation={navigation} />
+      <SignupForm navigation={navigation} />
     </Container>
   );
 };

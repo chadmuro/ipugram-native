@@ -4,7 +4,7 @@ import { Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import PostUploader from "./PostUploader";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { StackParamList } from "../../screens/Navigation";
+import { StackParamList } from "../../Navigation";
 
 const AddNewPostContainer = styled.View`
   margin-horizontal: 10px;

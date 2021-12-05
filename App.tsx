@@ -1,7 +1,7 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components/native";
-import SignedInStack from "./screens/Navigation";
+import SignedInStack from "./Navigation";
 import { theme } from "./styles/theme";
 
 export default function App() {

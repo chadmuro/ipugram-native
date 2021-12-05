@@ -8,7 +8,7 @@ import Post from "../components/Home/Post";
 import BottomTabs from "../components/Home/BottomTabs";
 import { PostType } from "../constants/types/PostType";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { StackParamList } from "./Navigation";
+import { StackParamList } from "../Navigation";
 
 const Container = styled.SafeAreaView`
   background-color: ${({ theme }) => theme.background.dark};

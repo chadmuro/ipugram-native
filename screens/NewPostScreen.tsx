@@ -1,8 +1,8 @@
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React from "react";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import styled from "styled-components/native";
 import AddNewPost from "../components/NewPost/AddNewPost";
-import { StackParamList } from "./Navigation";
+import { StackParamList } from "../Navigation";
 
 const Container = styled.SafeAreaView`
   background-color: ${({ theme }) => theme.background.dark};
