@@ -5,6 +5,8 @@ import * as Yup from "yup";
 import { Formik } from "formik";
 import styled from "styled-components/native";
 import { Ionicons } from "@expo/vector-icons";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { StackParamList } from "../../screens/Navigation";
 
 const uploadPostSchema = Yup.object().shape({
   caption: Yup.string().max(
@@ -24,8 +26,8 @@ const PostUploadAddIcon = styled.TouchableOpacity`
 `;
 
 const PostUploadImage = styled.Image`
-  width: 200;
-  height: 200;
+  width: 200px;
+  height: 200px;
 `;
 
 const PostUploadCaption = styled.TextInput`
@@ -40,7 +42,14 @@ const ErrorText = styled.Text`
   color: red;
 `;
 
-const PostUploader = () => {
+const PostUploader = ({
+  navigation,
+}: {
+  navigation: NativeStackNavigationProp<
+    StackParamList,
+    "NewPostScreen"
+  >;
+}) => {
   const [image, setImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -76,7 +85,11 @@ const PostUploader = () => {
   return (
     <Formik
       initialValues={{ caption: "", imageUrl: "" }}
-      onSubmit={(values) => console.log(values)}
+      onSubmit={(values) => {
+        console.log(values);
+        console.log("Your post was submitted successfully!");
+        navigation.goBack();
+      }}
       validationSchema={uploadPostSchema}
       validateOnMount={true}
     >

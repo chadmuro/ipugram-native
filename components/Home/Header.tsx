@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components/native";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { StackParamList } from "../../screens/Navigation";
 
 const Container = styled.View`
   justify-content: space-between;
@@ -42,14 +44,18 @@ const Title = styled.Text`
   font-size: 18px;
 `;
 
-const Header = () => {
+const Header = ({
+  navigation,
+}: {
+  navigation: NativeStackNavigationProp<StackParamList, "HomeScreen">;
+}) => {
   return (
     <Container>
       <TouchableOpacity>
         <Title>Ipugram</Title>
       </TouchableOpacity>
       <IconsContainer>
-        <IconWrap>
+        <IconWrap onPress={() => navigation.push("NewPostScreen")}>
           <Ionicons
             name="add-circle-outline"
             size={30}

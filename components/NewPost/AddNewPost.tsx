@@ -3,6 +3,8 @@ import styled from "styled-components/native";
 import { Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import PostUploader from "./PostUploader";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { StackParamList } from "../../screens/Navigation";
 
 const AddNewPostContainer = styled.View`
   margin-horizontal: 10px;
@@ -23,17 +25,24 @@ const HeaderText = styled.Text`
   margin-right: 25px;
 `;
 
-const AddNewPost = () => {
+const AddNewPost = ({
+  navigation,
+}: {
+  navigation: NativeStackNavigationProp<
+    StackParamList,
+    "NewPostScreen"
+  >;
+}) => {
   return (
     <AddNewPostContainer>
       <HeaderContainer>
-        <BackButtonWrap>
+        <BackButtonWrap onPress={() => navigation.goBack()}>
           <Ionicons name="chevron-back" size={30} color="white" />
         </BackButtonWrap>
         <HeaderText>NEW POST</HeaderText>
         <Text />
       </HeaderContainer>
-      <PostUploader />
+      <PostUploader navigation={navigation} />
     </AddNewPostContainer>
   );
 };

@@ -7,6 +7,8 @@ import Stories from "../components/Home/Stories";
 import Post from "../components/Home/Post";
 import BottomTabs from "../components/Home/BottomTabs";
 import { PostType } from "../constants/types/PostType";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { StackParamList } from "./Navigation";
 
 const Container = styled.SafeAreaView`
   background-color: ${({ theme }) => theme.background.dark};
@@ -18,7 +20,7 @@ const POSTS: PostType[] = [
     id: "1",
     imageUrl: faker.random.image(),
     user: faker.internet.userName(),
-    likes: faker.random.number(1000),
+    likes: faker.datatype.number(1000),
     caption: faker.lorem.sentence(),
     profile_picture: faker.random.image(),
     comments: [
@@ -33,7 +35,7 @@ const POSTS: PostType[] = [
     id: "2",
     imageUrl: faker.random.image(),
     user: faker.internet.userName(),
-    likes: faker.random.number(),
+    likes: faker.datatype.number(),
     caption: faker.lorem.sentence(),
     profile_picture: faker.random.image(),
     comments: [
@@ -53,17 +55,21 @@ const POSTS: PostType[] = [
     id: "3",
     imageUrl: faker.random.image(),
     user: faker.internet.userName(),
-    likes: faker.random.number(1000),
+    likes: faker.datatype.number(1000),
     caption: faker.lorem.sentence(),
     profile_picture: faker.random.image(),
     comments: [],
   },
 ];
 
-export default function HomeScreen() {
+export const HomeScreen = ({
+  navigation,
+}: {
+  navigation: NativeStackNavigationProp<StackParamList, "HomeScreen">;
+}) => {
   return (
     <Container>
-      <Header />
+      <Header navigation={navigation} />
       <Stories />
       <ScrollView>
         {POSTS.map((post, index) => (
@@ -73,4 +79,6 @@ export default function HomeScreen() {
       <BottomTabs />
     </Container>
   );
-}
+};
+
+export default HomeScreen;
